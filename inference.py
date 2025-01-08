@@ -308,8 +308,9 @@ if __name__ == '__main__':
     # DDP args
     parser.add_argument("--world_size", default=1, type=int,
                         help="number of the distributed processes.")
-    parser.add_argument('--local_rank', type=int, default=-1,
+    parser.add_argument('--local_rank', type=int, default=0, #default=-1,
                         help='Replica rank on the current node. This field is required '
                              'by `torch.distributed.launch`.')
     args = parser.parse_args()
+    print(args)
     main(args)
